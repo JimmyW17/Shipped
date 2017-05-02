@@ -1,0 +1,11 @@
+Boats new
+
+<% if @boat.errors.full_messages.any? %>
+<ul>
+  <% @boat.errors.full_messages.each do |error_message| %>
+  <li><%= error_message %></li> <br />
+  <% end %>
+</ul>
+<% end %>
+
+<%= render "boat_form" %>
