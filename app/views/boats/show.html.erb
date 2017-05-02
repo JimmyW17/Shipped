@@ -1,0 +1,13 @@
+<h1>Boat show</h1>
+
+<h3>Name</h3>
+<p><%=@boat.name%></p>
+<h3>Container Capacity</h3>
+<p><%=@boat.container_capacity%></p>
+<h3>Location</h3>
+<p><%=@boat.location%></p>
+<%= @boat.jobs %>
+
+<% @boat.jobs.each do |job| %>
+<%= job.description %>
+<% end %>

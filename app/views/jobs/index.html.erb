@@ -1,1 +1,19 @@
-Job index
+<h1>Jobs</h1>
+
+<%= link_to "New Job", new_job_path %>
+<table border="1" cellpadding="10">
+  <tr>
+    <th>Description</th>
+    <th>Origin</th>
+    <th>Destination</th>
+  </tr>
+<% @jobs.each do |job| %>
+<tr>
+  <td>
+    <%=link_to job.description, job_path(job) %> </li>
+  </td>
+  <td><%=job.origin%></td>
+  <td><%=job.destination%></td>
+</tr>
+<%end%>
+</table>
