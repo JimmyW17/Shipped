@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Shipped</title>
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Shipped</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <nav>
     <%= link_to "Home", root_path %>
     <% if user_signed_in? %>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <%= link_to "Account", edit_user_registration_path %>
     <%= link_to "Jobs", jobs_path %>
     <%= link_to "Ships", boats_path %>
-  <% else %>
+    <% else %>
     <%= link_to "Sign In", user_session_path %>
     <%= link_to "Sign Up", new_user_registration_path %>
     <% end %>
-    <%= yield %>
-  </body>
+  </nav>
+  <% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+  <% elsif flash[:alert] %>
+  <div id="alert"><%= flash[:alert] %></div>
+  <% end %>
+
+  <%= yield %>
+</body>
 </html>
