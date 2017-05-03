@@ -23,6 +23,22 @@ class BoatsController < ApplicationController
     end
   end
 
+  def edit
+    @boat = Boat.find(params[:id])
+  end
+
+  def update
+    @boat = Boat.find(params[:id])
+    @boat.update(boat_params)
+    if @boat.save
+      flash[:notice] = "Boat updated successfully"
+      redirect_to boat_path
+    else
+      flash[:alert] = "There was an issue updating boat"
+      render :edit
+    end
+  end
+
   private
 
   def boat_params

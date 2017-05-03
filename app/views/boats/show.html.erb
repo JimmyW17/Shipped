@@ -6,8 +6,9 @@
 <p><%=@boat.container_capacity%></p>
 <h3>Location</h3>
 <p><%=@boat.location%></p>
+<%= link_to "Edit", edit_boat_path(@boat) %>
+<br>
 <%= @boat.jobs %>
-
 <% @boat.jobs.each do |job| %>
 <%= job.description %>
 <% end %>
