@@ -11,5 +11,5 @@
 
 <h3>Jobs</h3>
 <% @boat.jobs.each do |job| %>
-<%= job.description %><br>
+<%= link_to job.description, job_path(job) %><br>
 <% end %>
