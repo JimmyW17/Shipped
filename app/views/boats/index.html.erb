@@ -1,7 +1,9 @@
+<div id='boats_index'>
 <h1>Boats</h1>
 
 <%= link_to "New Ship", new_boat_path %>
-<table border="1" cellpadding="10">
+
+<table>
   <tr>
     <th>Ship Name</th>
     <th>Container Capacity</th>
@@ -17,9 +19,4 @@
 </tr>
 <%end%>
 </table>
-
-<% @boats.each do |boat| %>
-<% boat.jobs.each do |job| %>
-<%= job.description %>
-<% end %>
-<% end %>
+</div>

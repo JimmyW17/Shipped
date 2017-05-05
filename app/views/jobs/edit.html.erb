@@ -1,0 +1,21 @@
+<% if @job.errors.full_messages.any? %>
+<ul>
+  <% @job.errors.full_messages.each do |error_message| %>
+  <li><%= error_message %></li> <br />
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @job, remote:true do |f| %>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<%= f.label :origin %>
+<%= f.select :origin, ['Alberta', 'California', 'Florida', 'New York', 'Seoul', 'Texas' 'Tokyo', 'Vancouver'] %>
+<%= f.label :destination %>
+<%= f.select :destination, ['Alberta', 'California', 'Florida', 'New York', 'Seoul', 'Texas', 'Tokyo', 'Vancouver'] %>
+<%= f.label :cost %>
+<%= f.text_field :cost %>
+<%= f.label :containers_needed %>
+<%= f.number_field :containers_needed %>
+<%= f.submit %>
+<% end %>

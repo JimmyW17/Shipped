@@ -2,9 +2,9 @@
 <%= f.label :description %>
 <%= f.text_area :description %>
 <%= f.label :origin %>
-<%= f.text_field :origin %>
+<%= f.select :origin, ['Alberta', 'California', 'Florida', 'New York', 'Seoul', 'Texas' 'Tokyo', 'Vancouver'] %>
 <%= f.label :destination %>
-<%= f.text_field :destination %>
+<%= f.select :destination, ['Alberta', 'California', 'Florida', 'New York', 'Seoul', 'Texas', 'Tokyo', 'Vancouver'] %>
 <%= f.label :cost %>
 <%= f.text_field :cost %>
 <%= f.label :containers_needed %>

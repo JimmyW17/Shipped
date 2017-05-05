@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :boats
   resources :jobs
   root to: 'home#index'
+  # get '/boats/:id/jobs' => 'boats#jobs'
 end

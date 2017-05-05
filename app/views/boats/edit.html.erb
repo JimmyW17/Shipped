@@ -1,1 +1,23 @@
-<%= render 'boat_form' %>
+<% if @boat.errors.full_messages.any? %>
+<ul>
+  <% @boat.errors.full_messages.each do |error_message| %>
+  <li><%= error_message %></li> <br />
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @boat, :html => {:multipart => true}, remote:true do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :container_capacity %>
+<%= f.number_field :container_capacity %><br>
+<%= f.label :location %>
+<%= f.select :location, ['Alberta', 'California', 'Florida', 'New York', 'Seoul', 'Texas', 'Tokyo', 'Vancouver'] %><br>
+<%= f.file_field :photo %><br>
+<%= f.collection_check_boxes(:job_ids, Job.all, :id, :description) do |b| %>
+  <%= b.label class:'label-checkbox' do %>
+  <%= b.check_box + b.text%>
+  <% end %>
+<% end %>
+<%= f.submit %>
+<% end %>

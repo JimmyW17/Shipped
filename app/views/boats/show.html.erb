@@ -1,5 +1,5 @@
 <h1>Boat show</h1>
-
+<%= image_tag @boat.photo.url(:medium) %>
 <h3>Name</h3>
 <p><%=@boat.name%></p>
 <h3>Container Capacity</h3>
@@ -8,7 +8,8 @@
 <p><%=@boat.location%></p>
 <%= link_to "Edit", edit_boat_path(@boat) %>
 <br>
-<%= @boat.jobs %>
+
+<h3>Jobs</h3>
 <% @boat.jobs.each do |job| %>
-<%= job.description %>
+<%= job.description %><br>
 <% end %>
