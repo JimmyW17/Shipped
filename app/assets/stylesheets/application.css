@@ -31,6 +31,16 @@
 
 html {
   padding: 15px;
+  background-color: #277FFF;
+}
+
+html, body {
+  height: 100%;
+}
+
+.main {
+  padding: 5px;
+  min-height: 100%;
 }
 
 /* Tables */

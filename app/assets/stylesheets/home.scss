@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#home_div {
+  height: 400px;
+  display: inline-block;
+  overflow: hidden;
+}
+
 #home_img {
   width: 100%;
+  overflow: auto;
+  height: auto;
 }
